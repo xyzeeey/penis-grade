@@ -59,7 +59,6 @@ const gradeInfo = [
 
 let gradeInfoNo;
 
-
 const detailGrade = ['F 등급', 'D등급', 'C등급', 'B등급', 'A등급', 'S등급'];
 
 
@@ -145,17 +144,17 @@ function calcBody() {
 function calcSum() {
     sumPoint = lengthPoint + headPoint + bodyPoint;
     if (sumPoint <= 4) {
-        gradeInfoNo = 0;
+        gradeInfoNo = 0;  // F
     } else if (5 <= sumPoint && sumPoint <= 7) {
-        gradeInfoNo = 1;
+        gradeInfoNo = 1;  // D
     } else if (8 <= sumPoint && sumPoint <= 10) {
-        gradeInfoNo = 2;
+        gradeInfoNo = 2;  // C
     } else if (11 <= sumPoint && sumPoint <= 13) {
-        gradeInfoNo = 3;
+        gradeInfoNo = 3;  // B
     } else if (14 <= sumPoint && sumPoint <= 16) {
-        gradeInfoNo = 4;
+        gradeInfoNo = 4;  // A
     } else if (17 <= sumPoint) {
-        gradeInfoNo = 5;
+        gradeInfoNo = 5;  // S
     }
     console.log(gradeInfoNo);
     compensation();
@@ -163,12 +162,15 @@ function calcSum() {
     resultGradeElem.textContent = gradeInfo[gradeInfoNo]['totalGrade'];
     resultWrapElem.style.background = gradeInfo[gradeInfoNo]['bgColor'];
     resultImgElem.src = `img/grade-${gradeInfo[gradeInfoNo]['imgNo']}.png`;
-    resultImgElem.srcset = `img/grade-${gradeInfo[gradeInfoNo]['imgNo']}.png`;
+    resultImgElem.srcset = `img/grade-${gradeInfo[gradeInfoNo]['imgNo']}@2x.png 2x`;
 }
 
 
 
 function compensation() {
+    if (gradeInfoNo == 2 && lengthPoint == 1 ) {
+        gradeInfoNo--;
+    }
     if (gradeInfoNo >= 3) { // 전체 등급 B이상
         if (sizeLength < 6) {
             gradeInfoNo = gradeInfoNo - 3;
