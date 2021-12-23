@@ -232,6 +232,6 @@ window.addEventListener('click', (e) => {
 
 
 function shareTwitter() {
-    const shareUrl = "devpad.tistory.com/"; // 전달할 URL
+    const shareUrl = "penis-grade.netlify.app/"; // 전달할 URL
     window.open(`https://twitter.com/intent/tweet?text=저의 페니스 등급은 ${gradeInfo[gradeInfoNo]['totalGrade']}입니다 ${gradeInfo[gradeInfoNo]['emoji']}&url=${shareUrl}`);
 }
