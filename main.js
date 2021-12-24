@@ -273,8 +273,8 @@ function shareTwitter() {
 }
 
 
-window.addEventListener('resize', () => {
-    container.forEach((item) => {
-        item.style.height = '100vh';
-    })
-});
+// window.addEventListener('resize', () => {
+//     container.forEach((item) => {
+//         item.style.height = '100vh';
+//     })
+// });
