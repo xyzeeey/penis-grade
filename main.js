@@ -1,4 +1,5 @@
 const btnResultElem = document.querySelector('.btn-result');
+const container = document.querySelectorAll('.container');
 const resultContainerElem = document.querySelector('.result-container');
 const measureContainerElem = document.querySelector('.measure-container');
 
@@ -237,3 +238,9 @@ function shareTwitter() {
     const shareUrl = "penis-grade.netlify.app/"; // 전달할 URL
     window.open(`https://twitter.com/intent/tweet?text=저의 페니스 등급은 ${gradeInfo[gradeInfoNo]['totalGrade']}입니다 ${gradeInfo[gradeInfoNo]['emoji']}&url=${shareUrl}`);
 }
+
+container.forEach((item) => {
+    item.addEventListener('resize', () => {
+        item.style.bottom = 0;
+    });
+});

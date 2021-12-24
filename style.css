@@ -18,6 +18,8 @@ body {
     align-items: center;
     background: #1D64D6;
     text-align: center;
+    position: relative;
+    bottom: 0;
 }
 
 .wrap {
@@ -104,7 +106,7 @@ textarea:-ms-input-placeholder {
 .measure-container,
 .result-container {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     background: rgba(0, 0, 0, .9);
     z-index: -1;
