@@ -275,6 +275,6 @@ function shareTwitter() {
 
 window.addEventListener('resize', () => {
     container.forEach((item) => {
-        item.style.height = '100%';
+        item.style.height = '100vh';
     })
 });
