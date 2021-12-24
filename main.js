@@ -218,10 +218,12 @@ function clickResult(){
 btnResultElem.addEventListener('click', clickResult);
 
 btnCloseResultElem.addEventListener('click', () => {
+    window.scrollTo(0,0);
     resultContainerElem.classList.remove('show');
 });
 
 btnCloseMeasureElem.addEventListener('click', () => {
+    window.scrollTo(0,0);
     measureContainerElem.classList.remove('show');
 });
 
@@ -238,9 +240,3 @@ function shareTwitter() {
     const shareUrl = "penis-grade.netlify.app/"; // 전달할 URL
     window.open(`https://twitter.com/intent/tweet?text=저의 페니스 등급은 ${gradeInfo[gradeInfoNo]['totalGrade']}입니다 ${gradeInfo[gradeInfoNo]['emoji']}&url=${shareUrl}`);
 }
-
-container.forEach((item) => {
-    item.addEventListener('resize', () => {
-        item.style.bottom = 0;
-    });
-});
