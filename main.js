@@ -213,17 +213,17 @@ function clickResult(){
     
     showResultPopup();
 
+    console.log(sizeLength)
+
 }
 
 btnResultElem.addEventListener('click', clickResult);
 
 btnCloseResultElem.addEventListener('click', () => {
-    window.scrollTo(0,0);
     resultContainerElem.classList.remove('show');
 });
 
 btnCloseMeasureElem.addEventListener('click', () => {
-    window.scrollTo(0,0);
     measureContainerElem.classList.remove('show');
 });
 
@@ -234,6 +234,39 @@ window.addEventListener('click', (e) => {
 window.addEventListener('click', (e) => {
     e.target === resultContainerElem ? resultContainerElem.classList.remove('show') : false
 })
+
+
+function maxLengthCheck1(object){
+    const pattern1 = /\./g;
+    object.value = object.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); //숫자, 소수점 이외 입력 방지
+
+    console.log(pattern1.test(object.value))
+
+    if (object.value.length == 3) {
+        if (pattern1.test(object.value)) {
+            object.maxLength = 4;
+        } else if (pattern1.test(object.value) == false) {
+            object.value = object.value.slice(0, object.maxLength - 2);
+        }
+    }
+}
+
+
+function maxLengthCheck2(object){
+    const pattern1 = /\./g;
+    object.value = object.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); //숫자, 소수점 이외 입력 방지
+
+    console.log(pattern1.test(object.value))
+
+    if (object.value.length == 2) {
+        if (pattern1.test(object.value)) {
+            object.maxLength = 3;
+        } else if (pattern1.test(object.value) == false) {
+            object.value = object.value.slice(0, object.maxLength - 2);
+        }
+    }
+}
+
 
 
 function shareTwitter() {

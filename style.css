@@ -5,20 +5,30 @@
     font-style: normal;
 }
 
+html {
+    width: 100%;
+    height: 100%;
+}
+
 body {
+    width: 100%;
+    height: 100%;
     font-family: 'Noto Sans KR', sans-serif;
 }
 
 .container {
+    width: 100%;
+    height: 100%;
     display: flex;
-    width: 100vw;
-    height: 100vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: #1D64D6;
     text-align: center;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
 }
 
 .wrap {
@@ -104,7 +114,10 @@ textarea:-ms-input-placeholder {
 
 .measure-container,
 .result-container {
-    position: absolute;
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, .9);
