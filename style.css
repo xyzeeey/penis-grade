@@ -219,6 +219,10 @@ textarea:-ms-input-placeholder {
     margin-bottom: 30px;
 }
 
+.btm-ad {
+    margin-top: 50px;
+}
+
 
 @media screen and (min-width: 769px) {
     .wrap {
